@@ -18,7 +18,7 @@ fyers.setRedirectUrl(
 
 // Define the authorization code and secret key required for generating access token
 // const authcode = "eyJxxxx"; // Replace with the actual authorization code obtained from the user
-// const secretKey = "U1Q0W3G7SB"; // Replace with your secret key provided by Fyers
+const secretKey = "U1Q0W3G7SB"; // Replace with your secret key provided by Fyers
 
 // fyers
 //   .generateAuthCode({ secret_key: secretKey, auth_code: authcode })
@@ -42,8 +42,14 @@ app.get("/", (req, res) => {
 app.get("/api", (req, res) => {});
 
 app.get("/api/redirect/success", (req, res) => {
-  res.redirect("/");
-  console.log(req.query);
+  fyers
+    .generateAuthCode({ secret_key: secretKey, auth_code: req.query.auth_code })
+    .then((response) => {
+      res.send(response);
+    })
+    .catch((error) => {
+      res.send(error);
+    });
 });
 
 app.get("/api/auth", (req, res) => {
