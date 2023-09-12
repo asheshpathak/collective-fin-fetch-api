@@ -1,0 +1,25 @@
+{
+  "name": "collective-fin-fetch-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asheshpathak/collective-fin-fetch-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asheshpathak/collective-fin-fetch-api/issues"
+  },
+  "homepage": "https://github.com/asheshpathak/collective-fin-fetch-api#readme",
+  "engines": {
+    "node": "16.17.0"
+  }
+}
