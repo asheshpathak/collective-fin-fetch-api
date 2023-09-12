@@ -14,7 +14,7 @@ fyers.setAppId("9WC00P66KT-100");
 
 // Set the RedirectURL where the authorization code will be sent after the user grants access
 fyers.setRedirectUrl(
-  "https://collective-finance-dashboard-ee823694d892.herokuapp.com/"
+  "https://collective-finance-dashboard-ee823694d892.herokuapp.com/api/redirect/success/"
 );
 
 // Define the authorization code and secret key required for generating access token
@@ -64,7 +64,6 @@ app.get("/api/redirect/success", (req, res) => {
 
 app.get("/api/auth", (req, res) => {
   var generateAuthcodeURL = fyers.generateAuthCode();
-  console.log(generateAuthcodeURL);
   res.json({ url: generateAuthcodeURL });
 });
 
