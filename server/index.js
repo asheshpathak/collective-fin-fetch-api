@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const FyersAPI = require("fyers-api-v3");
+const { error } = require("console");
 
 const app = express();
 const PORT = process.env.PORT || 3286;
@@ -46,8 +47,13 @@ app.get("/authenticated", (req, res) => {
 app.get("/api", (req, res) => {});
 
 app.get("/api/redirect/success", (req, res) => {
+  const reqBody = {
+    auth_code: req.query.auth_code,
+
+    secret_key: secretKey,
+  };
   fyers
-    .generateAuthCode({ secret_key: secretKey, auth_code: req.query.auth_code })
+    .generate_access_token(reqBody)
     .then((response) => {
       res.redirect("/authenticated");
     })
