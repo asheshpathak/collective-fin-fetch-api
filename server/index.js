@@ -39,13 +39,17 @@ app.get("/", (req, res) => {
   );
 });
 
+app.get("/authenticated", (req, res) => {
+  res.send("Authenticated");
+});
+
 app.get("/api", (req, res) => {});
 
 app.get("/api/redirect/success", (req, res) => {
   fyers
     .generateAuthCode({ secret_key: secretKey, auth_code: req.query.auth_code })
     .then((response) => {
-      res.send(response);
+      res.redirect("/authenticated");
     })
     .catch((error) => {
       res.send(error);
