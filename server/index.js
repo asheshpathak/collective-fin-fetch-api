@@ -2,8 +2,10 @@ const express = require("express");
 const path = require("path");
 const FyersAPI = require("fyers-api-v3");
 const { error } = require("console");
+const cookieParser = require("cookie-parser");
 
 const app = express();
+app.use(cookieParser());
 const PORT = process.env.PORT || 3286;
 
 // Create a new instance of FyersAPI
@@ -51,7 +53,11 @@ app.get("/api/redirect/success", (req, res) => {
   fyers
     .generate_access_token(reqBody)
     .then((response) => {
-      res.header("x-access-token", response.access_token);
+      res.cookie("access_token", response, {
+        maxAge: 900000,
+        httpOnly: true,
+      });
+      //   res.header("x-access-token", response.access_token);
       res.redirect("/");
     })
     .catch((error) => {
