@@ -56,9 +56,10 @@ app.post("/api/fetch/quotes", (req, res) => {
     .getQuotes(inp)
     .then((response) => {
       console.log(response);
+      res.send(response);
     })
     .catch((error) => {
-      console.log(error);
+      res.send(error);
     });
 });
 
