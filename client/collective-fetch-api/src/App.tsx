@@ -10,7 +10,6 @@ function App() {
   // const access_token: string | null = headers.get("x-access-token");
   // setAccessToken(access_token);
   const cookies = new Cookies();
-  console.log(cookies.getAll());
   console.log(cookies.get("access_token"));
   const [accessToken, setAccessToken] = useState<String>("");
   useEffect(() => {
