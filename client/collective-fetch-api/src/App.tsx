@@ -6,14 +6,7 @@ import axios from "axios";
 
 function App() {
   const [accessToken, setAccessToken] = useState<string>("");
-  // fetch("/api/fetch/cookie")
-  //   .then((res: any) => {
-  //     res.json();
-  //   })
-  //   .then((data: any) => {
-  //     console.log(data);
-  //     // setAccessToken(data);
-  //   });
+
   axios.get("/api/fetch/cookie").then((response) => {
     console.log(response?.data.access_token);
     setAccessToken(response?.data?.access_token);
