@@ -12,7 +12,7 @@ function App() {
     })
     .then((data: any) => {
       console.log(data);
-      setAccessToken(data?.access_token);
+      setAccessToken(data);
     });
   return (
     <>
