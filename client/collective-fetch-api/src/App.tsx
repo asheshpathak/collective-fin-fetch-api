@@ -6,6 +6,7 @@ import { Homepage } from "./Components/Homepage";
 function App() {
   const headers = new Headers();
   const access_token = headers.get("x-access-token");
+  console.log(access_token);
   return (
     <>
       <BrowserRouter>
