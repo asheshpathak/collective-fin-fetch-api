@@ -4,12 +4,14 @@ import { Login } from "./Components/Login";
 import { Homepage } from "./Components/Homepage";
 
 function App() {
+  const headers = new Headers();
+  const access_token = headers.get("x-access-token");
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<Login />} />
+            <Route index element={access_token ? <Homepage /> : <Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Homepage />} />
           </Route>
