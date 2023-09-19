@@ -19,7 +19,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={accessToken ? <Login /> : <Homepage />} />
+            <Route index element={accessToken ? <Homepage /> : <Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Homepage />} />
           </Route>
