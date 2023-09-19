@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./Components/Login";
 import { Homepage } from "./Components/Homepage";
-import * as ReactCookies from "react-cookie";
+import { Cookies } from "react-cookie";
 
 function App() {
   // const [accessToken, setAccessToken] = useState<String>("");
   // const headers = new Headers();
   // const access_token: string | null = headers.get("x-access-token");
   // setAccessToken(access_token);
-  console.log(ReactCookies.Cookies.get("access_token"));
+  const cookies = new Cookies();
+  console.log(cookies.get("access_token"));
   return (
     <>
       <BrowserRouter>
