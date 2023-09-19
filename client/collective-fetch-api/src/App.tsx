@@ -5,21 +5,26 @@ import { Homepage } from "./Components/Homepage";
 import { CookiesProvider, useCookies } from "react-cookie";
 
 function App() {
-  const [cookie, setCookie] = useCookies(["access_token"]);
+  const [accessToken, setAccessToken] = useState<string>("");
+  fetch("/api/fetch/cookie")
+    .then((res) => {
+      res.json();
+    })
+    .then((data: any) => {
+      console.log(data);
+      setAccessToken(data["access_token"]);
+    });
   return (
     <>
-      <CookiesProvider>
-        {console.log(cookie.access_token)}
-        <BrowserRouter>
-          <Routes>
-            <Route path="/">
-              <Route index element={<Login />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/home" element={<Homepage />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </CookiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element={accessToken ? <Login /> : <Homepage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Homepage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
