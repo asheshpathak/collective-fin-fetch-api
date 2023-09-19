@@ -16,7 +16,7 @@ function App() {
   //   });
   axios.get("/api/fetch/cookie").then((response) => {
     console.log(response?.data.access_token);
-    // setAccessToken(response?.data?.access_token);
+    setAccessToken(response?.data?.access_token);
   });
   return (
     <>
