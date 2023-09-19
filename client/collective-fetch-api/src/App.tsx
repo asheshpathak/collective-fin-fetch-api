@@ -9,7 +9,7 @@ function App() {
   // const headers = new Headers();
   // const access_token: string | null = headers.get("x-access-token");
   // setAccessToken(access_token);
-  console.log(ReactCookies.useCookies);
+  console.log(ReactCookies.useCookies("access_token"));
   return (
     <>
       <BrowserRouter>
