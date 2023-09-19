@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./Components/Login";
 import { Homepage } from "./Components/Homepage";
 
 function App() {
+  const [accessToken, setAccessToken] = useState("");
   const headers = new Headers();
   const access_token = headers.get("x-access-token");
-  console.log(access_token);
+  setAccessToken(access_token);
+  console.log(accessToken);
   return (
     <>
       <BrowserRouter>
