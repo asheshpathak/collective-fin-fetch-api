@@ -44,6 +44,10 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {});
 
+app.get("/api/fetch/cookie", (req, res) => {
+  res.send(req.cookies);
+});
+
 app.get("/api/redirect/success", (req, res) => {
   const reqBody = {
     auth_code: req.query.auth_code,
