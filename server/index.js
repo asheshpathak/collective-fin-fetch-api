@@ -41,12 +41,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/authenticated", (req, res) => {
-  async function getQuotes() {
-    let quotes = new fyers.quotes();
-    let result = await quotes.setSymbol("NSE:ONGC-EQ").getQuotes();
-    res.send(result);
-  }
-  getQuotes();
+  res.send(Authenticated);
 });
 
 app.get("/api", (req, res) => {});
