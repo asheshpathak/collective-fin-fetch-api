@@ -2,24 +2,31 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./Components/Login";
 import { Homepage } from "./Components/Homepage";
-import { CookiesProvider, useCookies } from "react-cookie";
+import axios from "axios";
 
 function App() {
   const [accessToken, setAccessToken] = useState<string>("");
-  fetch("/api/fetch/cookie")
-    .then((res) => {
-      res.json();
-    })
-    .then((data: any) => {
-      console.log(data);
-      setAccessToken(data);
-    });
+  // fetch("/api/fetch/cookie")
+  //   .then((res: any) => {
+  //     res.json();
+  //   })
+  //   .then((data: any) => {
+  //     console.log(data);
+  //     // setAccessToken(data);
+  //   });
+  axios.get("/api/fetch/cookie").then((response) => {
+    console.log(response?.data.access_token);
+    // setAccessToken(response?.data?.access_token);
+  });
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={accessToken ? <Homepage /> : <Login />} />
+            <Route
+              index
+              element={accessToken.length ? <Homepage /> : <Login />}
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Homepage />} />
           </Route>
