@@ -55,7 +55,7 @@ app.get("/api/redirect/success", (req, res) => {
   fyers
     .generate_access_token(reqBody)
     .then((response) => {
-      res.header({ access_token: response }).redirect("/homepage");
+      res.header({ access_token: response }).redirect("/");
     })
     .catch((error) => {
       res.send(error);
