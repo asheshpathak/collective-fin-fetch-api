@@ -25,7 +25,7 @@ function App() {
           <Route path="/">
             <Route
               index
-              element={accessToken.length ? <Homepage /> : <Login />}
+              element={accessToken?.length ? <Homepage /> : <Login />}
             />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Homepage />} />
