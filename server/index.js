@@ -49,6 +49,19 @@ app.get("/api/fetch/cookie", (req, res) => {
   //   res.send("hello");
 });
 
+app.post("/api/fetch/quotes", (req, res) => {
+  fyers.setAccessToken(req.cookies.access_token);
+  var inp = ["NSE:SBIN-EQ", "NSE:TCS-EQ"];
+  fyers
+    .getQuotes(inp)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+});
+
 app.get("/api/redirect/success", (req, res) => {
   const reqBody = {
     auth_code: req.query.auth_code,
