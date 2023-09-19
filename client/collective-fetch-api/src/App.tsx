@@ -4,9 +4,9 @@ import { Login } from "./Components/Login";
 import { Homepage } from "./Components/Homepage";
 
 function App() {
-  const [accessToken, setAccessToken] = useState("");
+  const [accessToken, setAccessToken] = useState<String>("");
   const headers = new Headers();
-  const access_token = headers.get("x-access-token");
+  const access_token: string | null = headers.get("x-access-token");
   setAccessToken(access_token);
   console.log(accessToken);
   return (
