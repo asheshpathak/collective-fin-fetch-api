@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/authenticated", (req, res) => {
-  res.send(Authenticated);
+  res.send("Authenticated");
 });
 
 app.get("/api", (req, res) => {});
