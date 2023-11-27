@@ -33,12 +33,12 @@ const secretKey = "U1Q0W3G7SB"; // Replace with your secret key provided by Fyer
 //   });
 
 app.use(
-  express.static(path.join(__dirname, "../client/collective-fetch-api/build"))
+  express.static(path.join(__dirname, "../packages/collective-fetch-api/build"))
 );
 
 app.get("/", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../client/collective-fetch-api/build", "index.html")
+    path.join(__dirname, "../packages/collective-fetch-api/build", "index.html")
   );
 });
 
