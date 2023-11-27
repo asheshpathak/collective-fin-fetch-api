@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Login } from "./Components/Login";
-import { Homepage } from "./Components/Homepage";
+import { Homepage } from "./Components/Homepage/Homepage";
+import { Positions } from "./Components/OpenPos/OpenPos";
 import axios from "axios";
 
 function App() {
@@ -15,13 +16,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-            <Route
-              index
-              element={accessToken?.length ? <Homepage /> : <Login />}
-            />
+          <Route path="/" element={<Homepage />}>
+            <Route index element={<Positions />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Homepage />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/portfolio" element={<Homepage />} />
+            <Route path="/positions" element={<Positions />} />
+            <Route path="/expenses" element={<Homepage />} />
+            <Route path="/orders" element={<Homepage />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -7,6 +7,13 @@ export const GetQuotes = () => {
   });
   return (
     <>
+      <input
+        type="text"
+        style={{ textTransform: "uppercase" }}
+        onChange={(e) => {
+          console.log(e.target.value);
+        }}
+      />
       <h1>Quotes</h1>
     </>
   );
