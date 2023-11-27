@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "build": "cd client/collective-fetch-api && npm install && npm run build && cd ../../server && npm install",
-    "install": "cd client/collective-fetch-api && npm install && cd ../../server && npm install",
+    "install": "npm install && cd client/collective-fetch-api && npm install && cd ../../server && npm install",
     "client": "cd client/collective-fetch-api && npm install",
     "server": "cd server && node index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
