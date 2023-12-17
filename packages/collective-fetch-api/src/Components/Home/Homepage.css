@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: "Source Sans 3", sans-serif;
+  }
+  
+  .homepage-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .home-sidenav {
+    width: 250px;
+    margin-right: 0;
+    background-color: #28282b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .sidenav-logo {
+    color: white;
+    font-weight: 900;
+    font-size: 22px;
+    /* text-transform: uppercase; */
+    height: 10%;
+  }
+  
+  .sidenav-links {
+    height: 60%;
+  }
+  
+  .sidenav-control {
+    height: 10%;
+  }
+  
+  .sidenav-control button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    background-color: #4d4d53;
+    color: white;
+    border-radius: 2%;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .sidenav-link-wrapper {
+    padding: 10px;
+  }
+  
+  .sidenav-link:link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .sidenav-link:visited {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .sidenav-link:active {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .homepage-content {
+    height: 100%;
+    width: 100%;
+  }
